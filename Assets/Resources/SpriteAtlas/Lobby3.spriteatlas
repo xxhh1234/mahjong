@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Lobby3
+  serializedVersion: 2
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 1024
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 281f763b2b0edb14e875807b4537a508, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 272cce515e3bb404d93708ca2af8ec90, type: 3}
+  - {fileID: 21300000, guid: dc3569a28e0a0e041bb63ba5fa155269, type: 3}
+  - {fileID: 21300000, guid: ae325bb3da5cf344288feebe20dd984b, type: 3}
+  - {fileID: 21300000, guid: 5c3f3d246e94b624ebc4e9bbb84bafa1, type: 3}
+  - {fileID: 21300000, guid: 9a9f14654ba32284b8bc039648be8062, type: 3}
+  - {fileID: 21300000, guid: 4010ad26bc8ae75498072a105730faea, type: 3}
+  - {fileID: 21300000, guid: 3fd833765a1408e4ebf0b119ad956325, type: 3}
+  - {fileID: 21300000, guid: 85be06078a20d7c4d95fcb0cfe5a89ab, type: 3}
+  - {fileID: 21300000, guid: 81f0773915cd6294ab471f0fadcb91e2, type: 3}
+  - {fileID: 21300000, guid: 7231170aa8fc58b4ca161bfe623ae00b, type: 3}
+  - {fileID: 21300000, guid: 485ef78ba7faef74cbb9b43509572531, type: 3}
+  - {fileID: 21300000, guid: 06997afbb58c2a1449cc1e04d360b22a, type: 3}
+  - {fileID: 21300000, guid: c020a4cc284e6d74db52c5e493a21232, type: 3}
+  - {fileID: 21300000, guid: dfe581fc51620364b84fd1c0275c32f1, type: 3}
+  - {fileID: 21300000, guid: d7cd385ec1132b64483cb5115677f009, type: 3}
+  - {fileID: 21300000, guid: f6d56a9f7bd0cbe4183e82c744ee5aff, type: 3}
+  - {fileID: 21300000, guid: cb0b8a9f1b8f7db4c94d5d4ee858bcee, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - gold_300000
+  - myRank
+  - cancelButton3
+  - sureButton
+  - gold_100000
+  - cancelButton2
+  - button
+  - number2
+  - rankSingleFrame
+  - numberThree
+  - awardButton
+  - returnButton
+  - cancelButton1
+  - number1
+  - gold_500000
+  - wealthList
+  - exitGameButton
+  m_RenderDataMap: {}
+  m_Tag: Lobby3
+  m_IsVariant: 0
+  m_IsPlaceholder: 0

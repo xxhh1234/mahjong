@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Lobby2
+  serializedVersion: 2
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 1024
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 7d99dbd1a5942f044b764819bbc39bc3, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 3a04f290f8a468d4b8beef933d31ef2f, type: 3}
+  - {fileID: 21300000, guid: 474d09e10a4cbed4c93c1d6497493ce7, type: 3}
+  - {fileID: 21300000, guid: 7dc687425fbe4d9479f002738c19b589, type: 3}
+  - {fileID: 21300000, guid: 9d88a4e2c927c3b4586a8f23af4b2cdb, type: 3}
+  - {fileID: 21300000, guid: a68445a35074d2748aab6d81e9094609, type: 3}
+  - {fileID: 21300000, guid: 70654c7452576e54790cac06525e0afc, type: 3}
+  - {fileID: 21300000, guid: 30b0e384ba76c534487b723446502d99, type: 3}
+  - {fileID: 21300000, guid: 39de9ca4339b52f40851da72ced55d8f, type: 3}
+  - {fileID: 21300000, guid: c2ef74864054395478a329d74f058f21, type: 3}
+  - {fileID: 21300000, guid: fccf1d862d4750e4ab4935fc9b56b672, type: 3}
+  - {fileID: 21300000, guid: 1c99d4a631e645b4fa5e3cac857e4ca3, type: 3}
+  - {fileID: 21300000, guid: bf52f8297cd6b2c49983ca1662bc6e6e, type: 3}
+  - {fileID: 21300000, guid: 7cdb319964294f94eab18f96913b5cc1, type: 3}
+  - {fileID: 21300000, guid: b00443d92ba79614289129c0ce3a20d1, type: 3}
+  - {fileID: 21300000, guid: 4d60b3daec6fad24ab550b238b5aedf7, type: 3}
+  - {fileID: 21300000, guid: f4d9cfface89e1a4497778fdd039de10, type: 3}
+  - {fileID: 21300000, guid: a72c7bcca001ba54d8b8edb181b285f0, type: 3}
+  - {fileID: 21300000, guid: cc76a5ecacb4c9840a5ea937c1a310dd, type: 3}
+  - {fileID: 21300000, guid: 5db5c0bdac84f584e96bbc23f223a1c9, type: 3}
+  - {fileID: 21300000, guid: 5b40facdd89043e4681de337c340549a, type: 3}
+  - {fileID: 21300000, guid: ad0f983ee154dac46ab577db76e28338, type: 3}
+  - {fileID: 21300000, guid: c1988bee95dbf8f48baf670c3416f1c6, type: 3}
+  - {fileID: 21300000, guid: d8814defb9109744583505133836d2d1, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - add1
+  - roundRectangle
+  - task
+  - toggle1
+  - city
+  - buttonHighLight
+  - diamond
+  - activity
+  - coinBottom
+  - dailyAward
+  - iconDefault
+  - button
+  - coinAndAdd
+  - roleFrame1
+  - settings
+  - createButton
+  - arrow
+  - shop
+  - checkMark1
+  - toggle2
+  - redPoint
+  - checkMark2
+  - coin
+  m_RenderDataMap: {}
+  m_Tag: Lobby2
+  m_IsVariant: 0
+  m_IsPlaceholder: 0
