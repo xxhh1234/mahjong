@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace XH
 {
-    class LRUCache<TKey, TValue> where TValue : class
+    class LRUCache
     {
         private class Node
         {
-            public TKey key;
-            public TValue value;
+            public string key;
+            public object value;
             public Node prev;
             public Node next;
 
-            public Node(TKey k, TValue v)
+            public Node(string k, object v)
             {
                 key = k;
                 value = v;
@@ -22,15 +23,15 @@ namespace XH
         };
         private int n = 0;
         private Node head = null;
-        private Dictionary<TKey, Node> cache = new Dictionary<TKey, Node>();
+        private Dictionary<string, Node> cache = new Dictionary<string, Node>();
         
         public LRUCache(int capacity)
         { 
             n = capacity; 
             head = null;
         }
-        
-        public TValue Get(TKey key)
+
+        public object Get(string key)
         {
             if (!cache.ContainsKey(key))
                 return null;
@@ -40,8 +41,7 @@ namespace XH
             AddToHead(newNode);
             return newNode.value;
         }
-
-        public void Put(TKey key, TValue value)
+        public void Put(string key, object value)
         {
             if (Get(key) != null)
             {
@@ -52,6 +52,11 @@ namespace XH
             if (cache.Count == n)
                 DeleteNode(head.next);
             AddToHead(node);
+        }
+        public void ClearCache()
+        {
+            ResourceManager.Instance.UnLoad();
+            cache.Clear();
         }
 
         private void DeleteNode(Node node)
@@ -71,9 +76,8 @@ namespace XH
                 else
                     head = q;
             }
-            node = null;
+            ResourceManager.Instance.UnLoad();
         }
-
         private void AddToHead(Node node)
         {
             if (node == null)

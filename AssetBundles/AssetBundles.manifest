@@ -1,0 +1,14 @@
+ManifestFileVersion: 0
+CRC: 849358721
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: game.unity
+      Dependencies:
+        Dependency_0: texture.unity
+    Info_1:
+      Name: spriteatlas.unity
+      Dependencies: {}
+    Info_2:
+      Name: texture.unity
+      Dependencies: {}

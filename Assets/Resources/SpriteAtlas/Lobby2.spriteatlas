@@ -7,7 +7,6 @@ SpriteAtlas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Lobby2
-  serializedVersion: 2
   m_EditorData:
     serializedVersion: 2
     textureSettings:
@@ -32,6 +31,7 @@ SpriteAtlas:
       m_CrunchedCompression: 0
       m_AllowsAlphaSplitting: 0
       m_Overridden: 0
+      m_IgnorePlatformSupport: 0
       m_AndroidETC2FallbackOverride: 0
       m_ForceMaximumCompressionQuality_BC6H_BC7: 0
     packingSettings:
@@ -49,6 +49,30 @@ SpriteAtlas:
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 3a04f290f8a468d4b8beef933d31ef2f: 21300000
+    - 474d09e10a4cbed4c93c1d6497493ce7: 21300000
+    - 7dc687425fbe4d9479f002738c19b589: 21300000
+    - 9d88a4e2c927c3b4586a8f23af4b2cdb: 21300000
+    - a68445a35074d2748aab6d81e9094609: 21300000
+    - 70654c7452576e54790cac06525e0afc: 21300000
+    - 30b0e384ba76c534487b723446502d99: 21300000
+    - 39de9ca4339b52f40851da72ced55d8f: 21300000
+    - c2ef74864054395478a329d74f058f21: 21300000
+    - fccf1d862d4750e4ab4935fc9b56b672: 21300000
+    - 1c99d4a631e645b4fa5e3cac857e4ca3: 21300000
+    - bf52f8297cd6b2c49983ca1662bc6e6e: 21300000
+    - 7cdb319964294f94eab18f96913b5cc1: 21300000
+    - b00443d92ba79614289129c0ce3a20d1: 21300000
+    - 4d60b3daec6fad24ab550b238b5aedf7: 21300000
+    - f4d9cfface89e1a4497778fdd039de10: 21300000
+    - a72c7bcca001ba54d8b8edb181b285f0: 21300000
+    - cc76a5ecacb4c9840a5ea937c1a310dd: 21300000
+    - 5db5c0bdac84f584e96bbc23f223a1c9: 21300000
+    - 5b40facdd89043e4681de337c340549a: 21300000
+    - ad0f983ee154dac46ab577db76e28338: 21300000
+    - c1988bee95dbf8f48baf670c3416f1c6: 21300000
+    - d8814defb9109744583505133836d2d1: 21300000
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 3a04f290f8a468d4b8beef933d31ef2f, type: 3}
@@ -101,4 +125,3 @@ SpriteAtlas:
   m_RenderDataMap: {}
   m_Tag: Lobby2
   m_IsVariant: 0
-  m_IsPlaceholder: 0

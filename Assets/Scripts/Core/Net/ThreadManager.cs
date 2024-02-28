@@ -1,12 +1,14 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace XH
 {
     class ThreadManager : MonoBehaviour
     {
-        private static bool NoUpdate =true;
+        private static bool NoUpdate = true;
         private static List<Action> UpdateQueue = new List<Action>();
         private static List<Action> UpdateRunQueue = new List<Action>();
 
@@ -18,7 +20,7 @@ namespace XH
                 NoUpdate = false;
             }
         }
-      
+
         private void FixedUpdate()
         {
             lock (UpdateQueue)

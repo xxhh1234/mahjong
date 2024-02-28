@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace XH
 {
     class Model
     {
         private string modelName;
+        private Action<ValueType> uiAction;
 
         public virtual void Init(string name) 
         {
@@ -23,6 +19,18 @@ namespace XH
         }
 
         public string GetModelName() {  return modelName; }
+        public void InitEvent(short dataEventCode, short uiEventCode)
+        {
+            uiAction = (ValueType uiEventData) =>
+            {
+                EventManager.Instance.Broadcast(uiEventCode, uiEventData);
+            };
+            EventManager.Instance.AddListener(dataEventCode, uiAction);
+        }
+        public void UnInitEvent(short dataEventCode)
+        {
+            EventManager.Instance.RemoveListener(dataEventCode, uiAction);
+        }
     }
 
 }

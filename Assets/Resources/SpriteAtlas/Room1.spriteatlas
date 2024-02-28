@@ -7,7 +7,6 @@ SpriteAtlas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Room1
-  serializedVersion: 2
   m_EditorData:
     serializedVersion: 2
     textureSettings:
@@ -32,6 +31,7 @@ SpriteAtlas:
       m_CrunchedCompression: 0
       m_AllowsAlphaSplitting: 0
       m_Overridden: 0
+      m_IgnorePlatformSupport: 0
       m_AndroidETC2FallbackOverride: 0
       m_ForceMaximumCompressionQuality_BC6H_BC7: 0
     packingSettings:
@@ -49,14 +49,50 @@ SpriteAtlas:
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 503c2b40ab15bbf4e9603996cc3f8236: 21300000
+    - 5a4697c0406aba44cafefe3ca7da100e: 21300000
+    - dc1ce1d0fd89aff4ea56cdc61665ce54: 21300000
+    - 69007d8156cafac4d888c04454458188: 21300000
+    - 8871c2e233da693459942978bca730b0: 21300000
+    - 31f173239e3750741aba619e9c0d03f2: 21300000
+    - d9bef3333f4eb1b498ab3080043c92d7: 21300000
+    - 5154075383ea6f648aae90ebc25976fa: 21300000
+    - 2b1557736da20d344b2f0a9a3d60ad9e: 21300000
+    - 34af08b3e42931d49bd6b9683ce8fb39: 21300000
+    - 7af48fd3bb19b4641880b4d1bc419359: 21300000
+    - 92e0e624a9b5fd440b3115facfb46c38: 21300000
+    - 0005e1b48e96f3240b6b43245659fdb2: 21300000
+    - b148baf42f62ed8479b052ed1a2f4b29: 21300000
+    - 17d05ec5dc43f9f42bfade84b9c569b8: 21300000
+    - f3171a4662584fe4587ae557e019e9c5: 21300000
+    - e43f1156b297bec4bbabb7b099f6fca3: 21300000
+    - cb6bac76965dbe0418efa2dd69f2ac4f: 21300000
+    - 691af0f7342dbee459572f3f6186ba2c: 21300000
+    - bb719548a43c77c4189435631acf4415: 21300000
+    - ee6317487e7bf8b419a36e6d4729d507: 21300000
+    - cdde1bf8bf8cc2143aa22063a32e3ff7: 21300000
+    - 3b267ef80be96a24f9efeb2c8326dfe2: 21300000
+    - bb90b6b9a0783144c9a8f172de444f4e: 21300000
+    - e2d8c73a3cc28f444a37b0fa37da5420: 21300000
+    - b6d8e7ca6ecd7df4bbb68aa886c97f8d: 21300000
+    - d8b3eeda3b70abf419481b1aa1a1d21b: 21300000
+    - 839e152bfb5070146ab487d83ef867e9: 21300000
+    - 39c6b83c2e22d7447ada148537c9260f: 21300000
+    - 9b8e119c45b644a41a188b5efaf3232f: 21300000
+    - 965770ad2c545694c870dbc006ecd7f2: 21300000
+    - 2612af4e34678574cb594cbd572c5047: 21300000
+    - 40eed48e09c8e6d4aa10718ea8be486c: 21300000
+    - 86c4f88e47ce9e24c976450ec2fe1f3f: 21300000
+    - 5ea54adeddbfbb64b8c69ff3d628fec2: 21300000
+    - 6c2a454f252ea9c4bab30401a511e3a2: 21300000
+    - 08482e6f6a1ca3f44a52c1b8f37c74bf: 21300000
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 503c2b40ab15bbf4e9603996cc3f8236, type: 3}
   - {fileID: 21300000, guid: 5a4697c0406aba44cafefe3ca7da100e, type: 3}
   - {fileID: 21300000, guid: dc1ce1d0fd89aff4ea56cdc61665ce54, type: 3}
   - {fileID: 21300000, guid: 69007d8156cafac4d888c04454458188, type: 3}
-  - {fileID: 21300000, guid: 265a30e1096d4c94c9a6c151a1f5d1dc, type: 3}
-  - {fileID: 21300000, guid: 440127127c0ffa745b505f4b0aa3019a, type: 3}
   - {fileID: 21300000, guid: 8871c2e233da693459942978bca730b0, type: 3}
   - {fileID: 21300000, guid: 31f173239e3750741aba619e9c0d03f2, type: 3}
   - {fileID: 21300000, guid: d9bef3333f4eb1b498ab3080043c92d7, type: 3}
@@ -79,10 +115,8 @@ SpriteAtlas:
   - {fileID: 21300000, guid: bb90b6b9a0783144c9a8f172de444f4e, type: 3}
   - {fileID: 21300000, guid: e2d8c73a3cc28f444a37b0fa37da5420, type: 3}
   - {fileID: 21300000, guid: b6d8e7ca6ecd7df4bbb68aa886c97f8d, type: 3}
-  - {fileID: 21300000, guid: f05f42dab877c5d4c9695e5fa524ae57, type: 3}
   - {fileID: 21300000, guid: d8b3eeda3b70abf419481b1aa1a1d21b, type: 3}
   - {fileID: 21300000, guid: 839e152bfb5070146ab487d83ef867e9, type: 3}
-  - {fileID: 21300000, guid: 6779203c8035388459fd75b396dc6fc5, type: 3}
   - {fileID: 21300000, guid: 39c6b83c2e22d7447ada148537c9260f, type: 3}
   - {fileID: 21300000, guid: 9b8e119c45b644a41a188b5efaf3232f, type: 3}
   - {fileID: 21300000, guid: 965770ad2c545694c870dbc006ecd7f2, type: 3}
@@ -97,8 +131,6 @@ SpriteAtlas:
   - wan_4
   - tong_3
   - tong_1
-  - DNXB
-  - BDNX
   - dong
   - tiao_4
   - tiao_8
@@ -108,27 +140,25 @@ SpriteAtlas:
   - tong_4
   - tong_5
   - wan_1
-  - oppositeHandTile
+  - handTileopposite
   - wan_7
   - tong_7
   - wan_3
   - tong_2
   - fa
-  - downHandTile
-  - j_bai
+  - handTiledown
+  - bai
   - tong_9
   - tiao_6
   - wan_5
   - tong_8
   - tong_6
-  - NXBD
   - tiao_1
   - zhong
-  - XBDN
   - tiao_5
   - tiao_7
   - wan_2
-  - upHandTile
+  - handTileup
   - tiao_9
   - wan_6
   - wan_9
@@ -137,4 +167,3 @@ SpriteAtlas:
   m_RenderDataMap: {}
   m_Tag: Room1
   m_IsVariant: 0
-  m_IsPlaceholder: 0

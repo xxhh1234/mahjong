@@ -3,7 +3,6 @@ using System.IO;
 using UnityEditor;
 using System.Linq;
 using UnityEngine;
-using static UnityEditor.Progress;
 using System;
 
 namespace XH
@@ -31,7 +30,7 @@ namespace XH
             List<string> dirs = new List<string>(Directory.EnumerateDirectories(AtlasPath));
             foreach (var dir in dirs)
             {
-                string atlasName = dir.Substring(dir.LastIndexOf("/") + 1);
+                string atlasName = dir.Substring(dir.LastIndexOf("/"));
                 List<string> atlasPath = new List<string>();
                 foreach (var pattern in patterns)
                 {
@@ -49,7 +48,7 @@ namespace XH
             foreach (string p in atlasPath)
                 atlasList.AddRange(AssetDatabase.LoadAllAssetsAtPath(p).OfType<Sprite>().ToArray());
 
-            XHLogger.XH_ASSERT(atlasList == null, "图集列表为空");
+            Logger.XH_ASSERT(atlasList == null, "图集列表为空");
 
             GameObject go = new GameObject();
             go.name = atlasName;

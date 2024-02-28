@@ -1,0 +1,61 @@
+ManifestFileVersion: 0
+CRC: 3083334647
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0d64e4ba8d9a3b80b163be0463d5e6a2
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2d8df09e698f722ada1caa03d3413830
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 0d64e4ba8d9a3b80b163be0463d5e6a2
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Resources/Texture/commonMahjong.png
+- Assets/Resources/Texture/settle.png
+- Assets/Resources/Texture/TopCommon.png
+- Assets/Resources/Texture/siChuan.png
+- Assets/Resources/Texture/scoreLoser.png
+- Assets/Resources/Texture/Girl.png
+- Assets/Resources/Texture/lobbyHoriPanel.png
+- Assets/Resources/Texture/lobbyFrameUp.png
+- Assets/Resources/Texture/lobbyFrameDown.png
+- Assets/Resources/Texture/DefaultHead.png
+- Assets/Resources/Texture/light2.png
+- Assets/Resources/Texture/BG2.png
+- Assets/Resources/Texture/NXBD.png
+- Assets/Resources/Texture/transparentBase2.png
+- Assets/Resources/Texture/prepareButton.png
+- Assets/Resources/Texture/wechatLogin.png
+- Assets/Resources/Texture/joinRoomPanel.png
+- Assets/Resources/Texture/lobbyRank.png
+- Assets/Resources/Texture/DNXB.png
+- Assets/Resources/Texture/createRoomButton.png
+- Assets/Resources/Texture/chooseBG.png
+- Assets/Resources/Texture/Boy.png
+- Assets/Resources/Texture/reJoinRoom.png
+- Assets/Resources/Texture/tipMessage.png
+- Assets/Resources/Texture/cancelButton.png
+- Assets/Resources/Texture/XBDN.png
+- Assets/Resources/Texture/luckGrow.png
+- Assets/Resources/Texture/scoreWinner.png
+- Assets/Resources/Texture/light1.png
+- Assets/Resources/Texture/lobbyBG.png
+- Assets/Resources/Texture/createRoomPanel.png
+- Assets/Resources/Texture/shop1.png
+- Assets/Resources/Texture/transparentBase1.png
+- Assets/Resources/Texture/horn.png
+- Assets/Resources/Texture/SetBG.png
+- Assets/Resources/Texture/BDNX.png
+- Assets/Resources/Texture/deskTop.png
+- Assets/Resources/Texture/commonExample.png
+- Assets/Resources/Texture/joinRoomButton.png
+- Assets/Resources/Texture/dailyTask.png
+Dependencies: []

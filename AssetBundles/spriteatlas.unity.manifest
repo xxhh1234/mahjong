@@ -1,0 +1,29 @@
+ManifestFileVersion: 0
+CRC: 393989971
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 6d9c1648c8eb44e1acb340b62ac47273
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 033fafe2c9f6c610c3a734393882fd4c
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 6d9c1648c8eb44e1acb340b62ac47273
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 687078895
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Resources/SpriteAtlas/Room1.spriteatlas
+- Assets/Resources/SpriteAtlas/Lobby1.spriteatlas
+- Assets/Resources/SpriteAtlas/Lobby2.spriteatlas
+- Assets/Resources/SpriteAtlas/Room3.spriteatlas
+- Assets/Resources/SpriteAtlas/Room2.spriteatlas
+- Assets/Resources/SpriteAtlas/Lobby3.spriteatlas
+Dependencies: []

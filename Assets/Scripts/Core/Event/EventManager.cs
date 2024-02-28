@@ -6,199 +6,209 @@ namespace XH
 {
     class EventManager : CSharpSingleton<EventManager>
     {
-        private Dictionary<EventType, Delegate> m_EventTable = new Dictionary<EventType, Delegate>();
+        private Dictionary<short, Delegate> m_EventTable = new Dictionary<short, Delegate>();
 
-        private void OnListenerAdding(EventType eventType, Delegate action)
+        public int SERVER_TO_CLIENT_BEGIN = 1;
+        public int SERVER_TO_CLIENT_END = 100;
+        public int CLIENT_TO_SERVER_BEGIN = 111;
+        public int CLIENT_TO_SERVER_END = 210;
+
+        public void AddListener(short eventCode, Action action)
         {
-            if (!m_EventTable.ContainsKey(eventType))
-                m_EventTable.Add(eventType, null);
-            Delegate d = m_EventTable[eventType];
-            if (d != null && d.GetType() != action.GetType())
-                XHLogger.XH_EXCEPTIION(new Exception(string.Format("当前事件{0}所对应的委托是{1}，要添加的委托类型为{2}", 
-                    eventType, d.GetType(), action.GetType())));
+            OnListenerAdding(eventCode, action);
+            m_EventTable[eventCode] = (Action)m_EventTable[eventCode] + action;
         }
-        private void OnListenerRemoving(EventType eventType, Delegate action)
+        public void AddListener<T>(short eventCode, Action<T> action)
         {
-            if(m_EventTable.TryGetValue(eventType, out Delegate d))
-            {
-                if (d == null)
-                    XHLogger.XH_EXCEPTIION(new Exception(string.Format
-                        ("事件{0}没有委托", eventType)));
-                else if (d.GetType() != action.GetType())
-                {
-                    XHLogger.XH_EXCEPTIION(new Exception(string.Format("事件{0}当前委托类型为{1}，要移除的委托类型为{2}", 
-                        eventType, d.GetType(), action.GetType())));
-                }
-                else return;
-            }
-            XHLogger.XH_EXCEPTIION(new Exception(string.Format("没有事件{0}", eventType)));
+            OnListenerAdding(eventCode, action);
+            m_EventTable[eventCode] = (Action<T>)m_EventTable[eventCode] + action;
         }
-        private void OnListenerRemoved(EventType eventType)
+        public void AddListener<T, X>(short eventCode, Action<T, X> action)
         {
-            if (m_EventTable[eventType] == null)
-                m_EventTable.Remove(eventType);
+            OnListenerAdding(eventCode, action);
+            m_EventTable[eventCode] = (Action<T, X>)m_EventTable[eventCode] + action;
         }
-        
-        public void AddListener(EventType eventType, Action action)
+        public void AddListener<T, X, Y>(short eventCode, Action<T, X, Y> action)
         {
-            OnListenerAdding(eventType, action);
-            m_EventTable[eventType] = (Action)m_EventTable[eventType] + action;
+            OnListenerAdding(eventCode, action);
+            m_EventTable[eventCode] = (Action<T, X, Y>)m_EventTable[eventCode] + action;
         }
-        public void AddListener<T>(EventType eventType, Action<T> action)
+        public void AddListener<T, X, Y, Z>(short eventCode, Action<T, X, Y, Z> action)
         {
-            OnListenerAdding(eventType, action);
-            m_EventTable[eventType] = (Action<T>)m_EventTable[eventType] + action;
+            OnListenerAdding(eventCode, action);
+            m_EventTable[eventCode] = (Action<T, X, Y, Z>)m_EventTable[eventCode] + action;
         }
-        public void AddListener<T, X>(EventType eventType, Action<T, X> action)
+        public void AddListener<T, X, Y, Z, W>(short eventCode, Action<T, X, Y, Z, W> action)
         {
-            OnListenerAdding(eventType, action);
-            m_EventTable[eventType] = (Action<T, X>)m_EventTable[eventType] + action;
-        }
-        public void AddListener<T, X, Y>(EventType eventType, Action<T, X, Y> action)
-        {
-            OnListenerAdding(eventType, action);
-            m_EventTable[eventType] = (Action<T, X, Y>)m_EventTable[eventType] + action;
-        }
-        public void AddListener<T, X, Y, Z>(EventType eventType, Action<T, X, Y, Z> action)
-        {
-            OnListenerAdding(eventType, action);
-            m_EventTable[eventType] = (Action<T, X, Y, Z>)m_EventTable[eventType] + action;
-        }
-        public void AddListener<T, X, Y, Z, W>(EventType eventType, Action<T, X, Y, Z, W> action)
-        {
-            OnListenerAdding(eventType, action);
-            m_EventTable[eventType] = (Action<T, X, Y, Z, W>)m_EventTable[eventType] + action;
-        }
- 
-        public void RemoveListener(EventType eventType, Action action)
-        {
-            OnListenerRemoving(eventType, action);
-            m_EventTable[eventType] = (Action)m_EventTable[eventType] - action;
-            OnListenerRemoved(eventType);
-        }
-        public void RemoveListener<T>(EventType eventType, Action<T> action)
-        {
-            OnListenerRemoving(eventType, action);
-            m_EventTable[eventType] = (Action<T>)m_EventTable[eventType] - action;
-            OnListenerRemoved(eventType);
-        }
-        public void RemoveListener<T, X>(EventType eventType, Action<T, X> action)
-        {
-            OnListenerRemoving(eventType, action);
-            m_EventTable[eventType] = (Action<T, X>)m_EventTable[eventType] - action;
-            OnListenerRemoved(eventType);
-        }
-        public void RemoveListener<T, X, Y>(EventType eventType, Action<T, X, Y> action)
-        {
-            OnListenerRemoving(eventType, action);
-            m_EventTable[eventType] = (Action<T, X, Y>)m_EventTable[eventType] - action;
-            OnListenerRemoved(eventType);
-        }
-        public void RemoveListener<T, X, Y, Z>(EventType eventType, Action<T, X, Y, Z> action)
-        {
-            OnListenerRemoving(eventType, action);
-            m_EventTable[eventType] = (Action<T, X, Y, Z>)m_EventTable[eventType] - action;
-            OnListenerRemoved(eventType);
-        }
-        public void RemoveListener<T, X, Y, Z, W>(EventType eventType, Action<T, X, Y, Z, W> action)
-        {
-            OnListenerRemoving(eventType, action);
-            m_EventTable[eventType] = (Action<T, X, Y, Z, W>)m_EventTable[eventType] - action;
-            OnListenerRemoved(eventType);
+            OnListenerAdding(eventCode, action);
+            m_EventTable[eventCode] = (Action<T, X, Y, Z, W>)m_EventTable[eventCode] + action;
         }
 
-        public void Broadcast(EventType eventType, bool isOnce=false)
+        public void RemoveListener(short eventCode, Action action)
         {
-            if (m_EventTable.TryGetValue(eventType, out Delegate d))
+            OnListenerRemoving(eventCode, action);
+            m_EventTable[eventCode] = (Action)m_EventTable[eventCode] - action;
+            OnListenerRemoved(eventCode);
+        }
+        public void RemoveListener<T>(short eventCode, Action<T> action)
+        {
+            OnListenerRemoving(eventCode, action);
+            m_EventTable[eventCode] = (Action<T>)m_EventTable[eventCode] - action;
+            OnListenerRemoved(eventCode);
+        }
+        public void RemoveListener<T, X>(short eventCode, Action<T, X> action)
+        {
+            OnListenerRemoving(eventCode, action);
+            m_EventTable[eventCode] = (Action<T, X>)m_EventTable[eventCode] - action;
+            OnListenerRemoved(eventCode);
+        }
+        public void RemoveListener<T, X, Y>(short eventCode, Action<T, X, Y> action)
+        {
+            OnListenerRemoving(eventCode, action);
+            m_EventTable[eventCode] = (Action<T, X, Y>)m_EventTable[eventCode] - action;
+            OnListenerRemoved(eventCode);
+        }
+        public void RemoveListener<T, X, Y, Z>(short eventCode, Action<T, X, Y, Z> action)
+        {
+            OnListenerRemoving(eventCode, action);
+            m_EventTable[eventCode] = (Action<T, X, Y, Z>)m_EventTable[eventCode] - action;
+            OnListenerRemoved(eventCode);
+        }
+        public void RemoveListener<T, X, Y, Z, W>(short eventCode, Action<T, X, Y, Z, W> action)
+        {
+            OnListenerRemoving(eventCode, action);
+            m_EventTable[eventCode] = (Action<T, X, Y, Z, W>)m_EventTable[eventCode] - action;
+            OnListenerRemoved(eventCode);
+        }
+
+        public void Broadcast(short eventCode, bool isOnce = false)
+        {
+            if (m_EventTable.TryGetValue(eventCode, out Delegate d))
             {
                 if (d is Action action)
                 {
                     action();
                     if (isOnce)
-                        RemoveListener(eventType, action);
+                        RemoveListener(eventCode, action);
                     return;
                 }
-                XHLogger.XH_EXCEPTIION(new Exception(string.Format("事件{0}对应委托具有不同的类型", eventType)));
+                Logger.XH_EXCEPTIION(new Exception(string.Format("事件{0}对应委托具有不同的类型", eventCode)));
+                return;
             }
-            XHLogger.XH_EXCEPTIION(new Exception(string.Format("没有事件{0}", eventType)));
+            Logger.XH_EXCEPTIION(new Exception(string.Format("没有事件{0}", eventCode)));
         }
-        public void Broadcast<T>(EventType eventType, T arg, bool isOnce=false)
+        public void Broadcast<T>(short eventCode, T arg, bool isOnce = false)
         {
-            if (m_EventTable.TryGetValue(eventType, out Delegate d))
+            if (m_EventTable.TryGetValue(eventCode, out Delegate d))
             {
                 if (d is Action<T> action)
                 {
                     action(arg);
                     if (isOnce)
-                        RemoveListener(eventType, action);
+                        RemoveListener(eventCode, action);
                     return;
                 }
-                XHLogger.XH_EXCEPTIION(new Exception(string.Format("事件{0}对应委托具有不同的类型", eventType)));
+                Logger.XH_EXCEPTIION(new Exception(string.Format("事件{0}对应委托具有不同的类型", eventCode)));
             }
-            XHLogger.XH_EXCEPTIION(new Exception(string.Format("没有事件{0}", eventType)));
+            Logger.XH_EXCEPTIION(new Exception(string.Format("没有事件{0}", eventCode)));
         }
-        public void Broadcast<T, X>(EventType eventType, T arg1, X arg2, bool isOnce=false)
+        public void Broadcast<T, X>(short eventCode, T arg1, X arg2, bool isOnce = false)
         {
 
-            if (m_EventTable.TryGetValue(eventType, out Delegate d))
+            if (m_EventTable.TryGetValue(eventCode, out Delegate d))
             {
                 if (d is Action<T, X> action)
                 {
                     action(arg1, arg2);
                     if (isOnce)
-                        RemoveListener(eventType, action);
+                        RemoveListener(eventCode, action);
                     return;
                 }
-                XHLogger.XH_EXCEPTIION(new Exception(string.Format("事件{0}对应委托具有不同的类型", eventType)));
+                Logger.XH_EXCEPTIION(new Exception(string.Format("事件{0}对应委托具有不同的类型", eventCode)));
+                return;
             }
-            XHLogger.XH_EXCEPTIION(new Exception(string.Format("没有事件{0}", eventType)));
+            Logger.XH_EXCEPTIION(new Exception(string.Format("没有事件{0}", eventCode)));
         }
-        public void Broadcast<T, X, Y>(EventType eventType, T arg1, X arg2, Y arg3, bool isOnce=false)
+        public void Broadcast<T, X, Y>(short eventCode, T arg1, X arg2, Y arg3, bool isOnce = false)
         {
 
-            if (m_EventTable.TryGetValue(eventType, out Delegate d))
+            if (m_EventTable.TryGetValue(eventCode, out Delegate d))
             {
                 if (d is Action<T, X, Y> action)
                 {
                     action(arg1, arg2, arg3);
                     if (isOnce)
-                        RemoveListener(eventType, action);
+                        RemoveListener(eventCode, action);
                     return;
                 }
-                XHLogger.XH_EXCEPTIION(new Exception(string.Format("事件{0}对应委托具有不同的类型", eventType)));
+                Logger.XH_EXCEPTIION(new Exception(string.Format("事件{0}对应委托具有不同的类型", eventCode)));
+                return;
             }
-            XHLogger.XH_EXCEPTIION(new Exception(string.Format("没有事件{0}", eventType)));
+            Logger.XH_EXCEPTIION(new Exception(string.Format("没有事件{0}", eventCode)));
         }
-        public void Broadcast<T, X, Y, Z>(EventType eventType, T arg1, X arg2, Y arg3, Z arg4, bool isOnce=false)
+        public void Broadcast<T, X, Y, Z>(short eventCode, T arg1, X arg2, Y arg3, Z arg4, bool isOnce = false)
         {
-            if (m_EventTable.TryGetValue(eventType, out Delegate d))
+            if (m_EventTable.TryGetValue(eventCode, out Delegate d))
             {
                 if (d is Action<T, X, Y, Z> action)
                 {
                     action(arg1, arg2, arg3, arg4);
                     if (isOnce)
-                        RemoveListener(eventType, action);
+                        RemoveListener(eventCode, action);
                     return;
                 }
-                XHLogger.XH_EXCEPTIION(new Exception(string.Format("事件{0}对应委托具有不同的类型", eventType)));
+                Logger.XH_EXCEPTIION(new Exception(string.Format("事件{0}对应委托具有不同的类型", eventCode)));
+                return;
             }
-            XHLogger.XH_EXCEPTIION(new Exception(string.Format("没有事件{0}", eventType)));
+            Logger.XH_EXCEPTIION(new Exception(string.Format("没有事件{0}", eventCode)));
         }
-        public void Broadcast<T, X, Y, Z, W>(EventType eventType, T arg1, X arg2, Y arg3, Z arg4, W arg5, bool isOnce=false)
+        public void Broadcast<T, X, Y, Z, W>(short eventCode, T arg1, X arg2, Y arg3, Z arg4, W arg5, bool isOnce = false)
         {
 
-            if (m_EventTable.TryGetValue(eventType, out Delegate d))
+            if (m_EventTable.TryGetValue(eventCode, out Delegate d))
             {
                 if (d is Action<T, X, Y, Z, W> action)
                 {
                     action(arg1, arg2, arg3, arg4, arg5);
                     if (isOnce)
-                        RemoveListener(eventType, action);
+                        RemoveListener(eventCode, action);
                     return;
                 }
-                XHLogger.XH_EXCEPTIION(new Exception(string.Format("事件{0}对应委托具有不同的类型", eventType)));
+                Logger.XH_EXCEPTIION(new Exception(string.Format("事件{0}对应委托具有不同的类型", eventCode)));
+                return;
             }
-            XHLogger.XH_EXCEPTIION(new Exception(string.Format("没有事件{0}", eventType)));
+            Logger.XH_EXCEPTIION(new Exception(string.Format("没有事件{0}", eventCode)));
+        }
+
+        private void OnListenerAdding(short eventCode, Delegate action)
+        {
+            if (!m_EventTable.ContainsKey(eventCode))
+                m_EventTable.Add(eventCode, null);
+            Delegate d = m_EventTable[eventCode];
+            if (d != null && d.GetType() != action.GetType())
+                Logger.XH_EXCEPTIION(new Exception(string.Format("当前事件{0}所对应的委托是{1}，要添加的委托类型为{2}",
+                    eventCode, d.GetType(), action.GetType())));
+        }
+        private void OnListenerRemoving(short eventCode, Delegate action)
+        {
+            if (m_EventTable.TryGetValue(eventCode, out Delegate d))
+            {
+                if (d == null)
+                    Logger.XH_EXCEPTIION(new Exception(string.Format
+                        ("事件{0}没有委托", eventCode)));
+                else if (d.GetType() != action.GetType())
+                {
+                    Logger.XH_EXCEPTIION(new Exception(string.Format("事件{0}当前委托类型为{1}，要移除的委托类型为{2}",
+                        eventCode, d.GetType(), action.GetType())));
+                }
+                else return;
+            }
+            Logger.XH_EXCEPTIION(new Exception(string.Format("没有事件{0}", eventCode)));
+        }
+        private void OnListenerRemoved(short eventCode)
+        {
+            if (m_EventTable[eventCode] == null)
+                m_EventTable.Remove(eventCode);
         }
     }
 }

@@ -1,8 +1,6 @@
 ﻿// 连接网络并开启新线程监听
 using System.Collections.Generic;
 using System.Threading;
-using TGClient;
-using Unity.VisualScripting;
 
 namespace XH
 {
@@ -13,33 +11,34 @@ namespace XH
         private readonly string ip = "127.0.0.1";
         private readonly int port = 4999;
 
-
-        public NetManager() 
+        public void Init()
         {
-            EventManager.Instance.AddListener<EventType, Dictionary<short, object>>(EventType.LOGIC_ServerToClient,  ClientToInternal);
-        }
-
-        private static void NetWork()
-        {
-            while(true)
-                peerClient.Service();
-        }
-
-        public void StartNetThread()
-        {
+            EventManager.Instance.AddListener<short, Dictionary<short, object>, bool>
+                (ClientToServer._ClientToServer, SendMessageToInternal);
+            EventManager.Instance.AddListener<short, Dictionary<short, object>, bool>
+                (ServerToClient._ServerToClient, SendMessageToInternal);
             peerClient.Connect(ip, port);
             netThread.IsBackground = true;
             netThread.Start();
         }
-
-        private  void ClientToInternal(EventType eventType, Dictionary<short, object> dict)
+        public void UnInit()
         {
-            EventManager.Instance.Broadcast(eventType, dict, true);
+            netThread.Abort();
+            peerClient.DisConnect();
+            EventManager.Instance.RemoveListener<short, Dictionary<short, object>, bool>
+                (ClientToServer._ClientToServer, SendMessageToInternal);
+            EventManager.Instance.RemoveListener<short, Dictionary<short, object>, bool>
+                (ServerToClient._ServerToClient, SendMessageToInternal);
         }
 
-        ~NetManager()
+        private static void NetWork()
         {
-            EventManager.Instance.RemoveListener<EventType, Dictionary<short, object>>(EventType.LOGIC_ServerToClient, ClientToInternal);
+            while (true)
+                peerClient.Service();
+        }
+        private  void SendMessageToInternal(short eventCode, Dictionary<short, object> dict, bool isRequest)
+        {
+            EventManager.Instance.Broadcast(eventCode, dict, isRequest);
         }
     }
 }

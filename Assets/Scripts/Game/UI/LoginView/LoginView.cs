@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Reflection;
-using UnityEngine.Events;
 using UnityEngine.UI;
+using XH;
 
-namespace XH
+namespace mahjong
 {
     class LoginView : View
     {
@@ -12,6 +11,8 @@ namespace XH
 
         public override void Init(string name)
         {
+            base.Init(name);
+
             inputId = transform.Find("inputId").GetComponent<InputField>();
             btnLogin = transform.Find("btnLogin").GetComponent<Button>();
             btnLogin.onClick.AddListener(() => 
@@ -20,20 +21,31 @@ namespace XH
                 action(inputId.text);
             });
 
-            EventManager.Instance.AddListener(EventType.UI_RefreshLoginView, (LoginData loginData) => 
-            { RefreshLoginView(loginData);});
+            EventManager.Instance.AddListener(UIEvent.RefreshLoginView, (ValueType value) =>
+            {
+                ThreadManager.ExecuteUpdate(() =>
+                {
+                    RefreshLoginView(value);
+                });
+            });
         }
 
         public override void UnInit()
         {
             base.UnInit();
 
-            EventManager.Instance.RemoveListener(EventType.UI_RefreshLoginView, (LoginData loginData) =>
-            { RefreshLoginView(loginData); });
+            EventManager.Instance.RemoveListener(UIEvent.RefreshLoginView, (ValueType value) =>
+            {
+                ThreadManager.ExecuteUpdate(() =>
+                {
+                    RefreshLoginView(value);
+                });
+            });
         }
 
-        public void RefreshLoginView(LoginData loginData)
+        public void RefreshLoginView(ValueType value)
         {
+            LoginData loginData = (LoginData)value;
             inputId.text = loginData.id;
         }
     }

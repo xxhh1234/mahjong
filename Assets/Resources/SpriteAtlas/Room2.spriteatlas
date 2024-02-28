@@ -7,7 +7,6 @@ SpriteAtlas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Room2
-  serializedVersion: 2
   m_EditorData:
     serializedVersion: 2
     textureSettings:
@@ -32,6 +31,7 @@ SpriteAtlas:
       m_CrunchedCompression: 0
       m_AllowsAlphaSplitting: 0
       m_Overridden: 0
+      m_IgnorePlatformSupport: 0
       m_AndroidETC2FallbackOverride: 0
       m_ForceMaximumCompressionQuality_BC6H_BC7: 0
     packingSettings:
@@ -49,6 +49,56 @@ SpriteAtlas:
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - f8863030a000a664bbea6f5da19d7354: 21300000
+    - 3080474000e7fa3469df594aeb1dd7b8: 21300000
+    - 490789901ec1b42419c227cffe84a830: 21300000
+    - ec496d905de9ed747ae3e92dd323f46e: 21300000
+    - 6db71ae089dd91446a018b64f1337482: 21300000
+    - 4c61d7f06eb526240bb94f297c8297f9: 21300000
+    - 4dd80f6159595924e8315eba960d56cf: 21300000
+    - 39b4a77168d15dd459a3272d63ab1112: 21300000
+    - e4527ad10ad40194f8556e6b66de1586: 21300000
+    - bc97e0f1ac2bb0c49952b274b1df6653: 21300000
+    - ee33fb5226311864a9bd4423ddace73d: 21300000
+    - bf078c33ff031c54e93489f54569eaea: 21300000
+    - 0759f0e3c111b6e47b609f6fde4d9f0a: 21300000
+    - 9465eb1492f7b27498c1961a7e110b5e: 21300000
+    - c4bdb954ba89f90478b7cd123bfbf800: 21300000
+    - f2643ed49f20daf4abe97364acf35f52: 21300000
+    - 6edaa50503ac7ae46bd3bbffaf984e37: 21300000
+    - 5862d9150bd8fe546b108d6f28cb0e0d: 21300000
+    - 8e7b9ec5fd680904182aff68781c6107: 21300000
+    - 3448b596e4dfb054095d6e688102d942: 21300000
+    - 3e567b96dc82c5741ac102fd6ddaee5a: 21300000
+    - b9d306a6227b0d747985cc10d0739ed1: 21300000
+    - af69e25792dea93478343486fbed365e: 21300000
+    - a768fd67dc77f1d4393407faf67c6a82: 21300000
+    - 20169de7c6844304d94584a1516665c7: 21300000
+    - 0ae2ea5829df5c3408e2aa2f03588be0: 21300000
+    - 4b19509859cf38c4a98ad7bd2f6d53e0: 21300000
+    - 9967fbc8cff12414fb1cf2687b204730: 21300000
+    - fb5b1ed845c4d444bbec47f955b86ec5: 21300000
+    - 824e22590b5480849afb64a635c83776: 21300000
+    - 642ded69a71d1ca4cb3cb47252f260fe: 21300000
+    - 63b1fdf9f0ff5374da7eaa0197b34a76: 21300000
+    - 43363d9a23cfda742a9bc2b08a7417ef: 21300000
+    - a272a1ea674f5384fbe6fb99b30bf31a: 21300000
+    - 42efd82b0b547b043abfd3efab49b430: 21300000
+    - 0a8a892bf7a34cc49b5e8d2af531bbe6: 21300000
+    - bd8057ab214624147a17def78119a410: 21300000
+    - 44ab6fab8e0c26546888a11ae6da8013: 21300000
+    - 1667c3bb4300ace41a3124fde258d805: 21300000
+    - aa1f45cb2907c4d47bd24b1cea17a8ab: 21300000
+    - b9a834db1f0a7194b95391eda6945892: 21300000
+    - 9aef667c475dfb54ab6e94c484a02304: 21300000
+    - a755fc7ccc4ffc7449818262c711fccd: 21300000
+    - 6869a38cd143d4448bd9337890244d2c: 21300000
+    - 3fa869ecaa909b449b824cf68f794878: 21300000
+    - fc90991dfed8cb94c93dd75cc4f47166: 21300000
+    - ca9ce0edd4cbebf4aac8530a22e0d0c6: 21300000
+    - d5577b1e3b94b7e4eb7aaefe59c998bd: 21300000
+    - 70f7275f1da973745b1c3f654c986cd0: 21300000
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: f8863030a000a664bbea6f5da19d7354, type: 3}
@@ -153,4 +203,3 @@ SpriteAtlas:
   m_RenderDataMap: {}
   m_Tag: Room2
   m_IsVariant: 0
-  m_IsPlaceholder: 0
